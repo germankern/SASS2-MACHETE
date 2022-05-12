@@ -1,0 +1,16 @@
+/* BUCLES */
+
+@for $padding from 1 through 5 {
+    .col-#{$padding} {
+        padding: 5px * $padding;
+    }
+}
+
+/* Estos bluques se usan para generar Frameworks */
+
+@each $color in green, yellow, black {
+    .font-#{$color} {
+        color:#{$color};
+        background-color: transparent;
+    }
+}

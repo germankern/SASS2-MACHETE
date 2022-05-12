@@ -1,0 +1,27 @@
+/*  Permiten difinir estilos que pueden ser reutilizados en
+    tu proyecto. Una de las mayores diferencias con los Extend,
+    es que los Mixins pueden recibir argumentos, los cuales nos
+    parmitirán produciar una gran variedad de estilos con pocas
+    lineas de código */
+
+/* MIXIN CON PARAMETROS */
+@mixin flexItems ($disp,$fDir,$justC,$alignI) {
+    display: $disp;
+    flex-direction: $fDir;
+    justify-content: $justC;
+    align-items: $alignI;
+}
+
+div {
+    @include flexItems(flex,column,center,center)
+}
+
+/* MIXIN SIN PARAMETROS */
+@mixin flexRowCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+header {
+    @include flexRowCenter; 
+}

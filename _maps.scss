@@ -1,0 +1,31 @@
+/*  Los mapas son variables cuyo valor es una colección de variables. 
+    $map: (key1:value1,key2:value2,key3:value3);                  */
+
+/*  Declaramos el mapa con el nombre: "coloresPrincipales"
+    dentro damos una clave y un valor. Ej: colorPrimario con valor Blue*/
+$coloresPrincipales: (
+    colorPrimario: blue,
+    colorSecundario: #eeccff,
+    colorWhite: white,
+    colorBlack: black,
+);
+
+@each $clave, $valor in $coloresPrincipales {
+    .#{$clave}{
+        color: $valor;
+    }
+}
+/* MAPA */
+$estilos: (
+    color: red,
+    centro: center,
+    tFuente: 35px,
+    paddingTop: 10px
+);
+/*  Con la función map-get tomamos los valores que
+    tenemos trabajados en el mapa "$estilos" */
+div {
+    color:map-get($estilos, color);
+    text-align: map-get($estilos, centro);
+    font-size: map-get($estilos, tFuente);
+}
